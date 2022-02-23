@@ -139,6 +139,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin15p"
             android:layout_marginTop="@dimen/margin25p"
-            android:layout_marginEnd="@dimen/margin15p" />
+            android:layout_marginEnd="@dimen/margin15p"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/card_invoice_detail"/>
     </LinearLayout>
 </layout>

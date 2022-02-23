@@ -20,7 +20,6 @@ data class rInvoice(
 
 fun toInvoice(rInvoice: rInvoice): Invoice {
     return Invoice(
-        0,
         rInvoice.id,
         rInvoice.createdAt,
         rInvoice.paymentDue,

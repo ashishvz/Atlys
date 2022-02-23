@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="card_invoice"
+            type="com.ashishvz.atlys.database.entities.Invoice" />
+        <import type="androidx.core.content.ContextCompat"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding20p"
+        app:cardBackgroundColor="@color/secondary_light"
+        app:cardCornerRadius="@dimen/cornerRadius10dp"
+        android:onClick="@{clickListener}"
+        android:layout_marginBottom="@dimen/margin20p">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding25p">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textHash"
+                style="@style/H3_Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hash"
+                android:textColor="@color/light_blue" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textInvoiceId"
+                style="@style/H3_Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/textHash"
+                android:text="@{card_invoice.invoiceId}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textName"
+                style="@style/Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{card_invoice.clientName}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textDue"
+                style="@style/Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textInvoiceId"
+                android:layout_marginTop="@dimen/margin25p"
+                android:text="@{card_invoice.paymentDueDate}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textAmount"
+                style="@style/H2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textDue"
+                android:text="@{card_invoice.formattedInvoiceTotal}"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/width100dp"
+                android:layout_height="@dimen/height40dp"
+                android:layout_below="@id/textName"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin25p"
+                app:cardBackgroundColor="@{ContextCompat.getColor(context, card_invoice.setStatusBackgroundColor())}"
+                app:cardCornerRadius="@dimen/cornerRadius8dp"
+                app:cardElevation="@dimen/elevation0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="@dimen/padding10dp">
+
+                    <ImageView
+                        android:id="@+id/dotImage"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/margin5dp"
+                        android:layout_toStartOf="@id/textStatus"
+                        android:src="@{ContextCompat.getDrawable(context, card_invoice.setDotDrawable())}" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textStatus"
+                        style="@style/H3_Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@{card_invoice.formattedStatus}"
+                        android:textColor="@{ContextCompat.getColor(context, card_invoice.setStatusTextColor())}" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

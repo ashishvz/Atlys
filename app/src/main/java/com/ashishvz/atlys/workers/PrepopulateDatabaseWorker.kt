@@ -39,7 +39,7 @@ class PrepopulateDatabaseWorker(
                            val invoice = toInvoice(invoices)
                             database.getInvoiceDao().insert(invoice)
                             for (item in invoices.items!!) {
-                                val items = toItem(item, invoice.invoiceId)
+                                val items = toItem(item, invoice.invoiceId!!)
                                 database.getItemDao().insert(items)
                             }
                         }

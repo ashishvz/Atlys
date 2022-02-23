@@ -15,9 +15,14 @@
     <color name="light_grey">#DFE3FA</color>
     <color name="dark_grey">#888EB0</color>
     <color name="light_blue">#7E88C3</color>
+    <color name="light_blue_trans">#207E88C3</color>
     <color name="dark_one">#0C0E16</color>
     <color name="dark_two">#141625</color>
     <color name="error_red">#EC5757</color>
     <color name="light_red">#DA9797</color>
     <color name="light_bg">#F8F8FB</color>
+    <color name="green">#357C3C</color>
+    <color name="green_trans">#30357C3C</color>
+    <color name="orange">#FFB72B</color>
+    <color name="orange_tran">#10FFB72B</color>
 </resources>

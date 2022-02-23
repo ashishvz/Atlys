@@ -6,7 +6,7 @@ import javax.inject.Inject
 class InvoiceRepository  @Inject constructor(
     private val invoiceDao: InvoiceDao
 ){
-    suspend fun getAllInvoices() =  invoiceDao.getAllInvoices()
+    fun getAllInvoices() =  invoiceDao.getAllInvoices()
 
     suspend fun getInvoice(id: String) = invoiceDao.getInvoiceById(id)
 
