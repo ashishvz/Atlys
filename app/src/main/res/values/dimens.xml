@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fontSize32sp">32sp</dimen>
+    <dimen name="fontSize20sp">20sp</dimen>
+    <dimen name="fontSize18sp">18sp</dimen>
+    <dimen name="fontSize16sp">16sp</dimen>
+    <dimen name="fontSize12sp">12sp</dimen>
+    <dimen name="fontSize11sp">11sp</dimen>
+
+    <dimen name="lineSpacing36dp">36dp</dimen>
+    <dimen name="lineSpacing22dp">22dp</dimen>
+    <dimen name="lineSpacing24dp">24dp</dimen>
+    <dimen name="lineSpacing15dp">15dp</dimen>
+    <dimen name="lineSpacing18dp">18dp</dimen>
+
+    <dimen name="fontSpacingMinus1dp">-1dp</dimen>
+    <dimen name="fontSpacingMinus0.63dp">-0.63dp</dimen>
+    <dimen name="fontSpacingMinus0.8dp">-0.8dp</dimen>
+    <dimen name="fontSpacingMinus0.25dp">-0.25dp</dimen>
+    <dimen name="fontSpacingMinus0.23dp">-0.23dp</dimen>
+
+    <dimen name="padding1dp">1dp</dimen>
+    <dimen name="padding2dp">2dp</dimen>
+    <dimen name="padding5dp">5dp</dimen>
+    <dimen name="padding10dp">01dp</dimen>
+    <dimen name="padding15p">15dp</dimen>
+    <dimen name="padding20p">20dp</dimen>
+    <dimen name="padding25p">25dp</dimen>
+
+    <dimen name="margin1dp">1dp</dimen>
+    <dimen name="margin2dp">2dp</dimen>
+    <dimen name="margin5dp">5dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="margin15p">15dp</dimen>
+    <dimen name="margin20p">20dp</dimen>
+    <dimen name="margin25p">25dp</dimen>
+
+    <dimen name="height40dp">40dp</dimen>
+    <dimen name="height60dp">60dp</dimen>
+    <dimen name="height80dp">80dp</dimen>
+    <dimen name="height100dp">100dp</dimen>
+    <dimen name="height120dp">120dp</dimen>
+    <dimen name="height140dp">140dp</dimen>
+    <dimen name="height250dp">250dp</dimen>
+
+    <dimen name="width1dp">1dp</dimen>
+    <dimen name="width2dp">2dp</dimen>
+    <dimen name="width60dp">60dp</dimen>
+    <dimen name="width80dp">80dp</dimen>
+    <dimen name="width100dp">100dp</dimen>
+    <dimen name="width120dp">120dp</dimen>
+    <dimen name="width140dp">140dp</dimen>
+    <dimen name="width400dp">400dp</dimen>
+
+    <dimen name="cornerRadius0dp">0dp</dimen>
+    <dimen name="cornerRadius8dp">8dp</dimen>
+    <dimen name="cornerRadius10dp">10dp</dimen>
+    <dimen name="cornerRadius45dp">45dp</dimen>
+    <dimen name="cornerRadius100dp">100dp</dimen>
+    <dimen name="cornerRadius250dp">250dp</dimen>
+
+    <dimen name="elevation0dp">0dp</dimen>
+    <dimen name="elevation8dp">8dp</dimen>
+
+    <dimen name="iconSize30dp">30dp</dimen>
+</resources>

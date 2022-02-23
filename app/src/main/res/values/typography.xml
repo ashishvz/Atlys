@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="H1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/spartan_bold</item>
+        <item name="android:textSize">@dimen/fontSize32sp</item>
+        <item name="lineSpacing">@dimen/lineSpacing36dp</item>
+        <item name="android:spacing">@dimen/fontSpacingMinus1dp</item>
+    </style>
+
+    <style name="H2" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/spartan_bold</item>
+        <item name="android:textSize">@dimen/fontSize20sp</item>
+        <item name="lineSpacing">@dimen/lineSpacing22dp</item>
+        <item name="android:spacing">@dimen/fontSpacingMinus0.63dp</item>
+    </style>
+
+    <style name="H3" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/spartan_bold</item>
+        <item name="android:textSize">@dimen/fontSize16sp</item>
+        <item name="lineSpacing">@dimen/lineSpacing24dp</item>
+        <item name="android:spacing">@dimen/fontSpacingMinus0.8dp</item>
+    </style>
+
+    <style name="H3_Small" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/spartan_bold</item>
+        <item name="android:textSize">@dimen/fontSize12sp</item>
+        <item name="lineSpacing">@dimen/lineSpacing15dp</item>
+        <item name="android:spacing">@dimen/fontSpacingMinus0.25dp</item>
+    </style>
+
+    <style name="Body1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/spartan_medium</item>
+        <item name="android:textSize">@dimen/fontSize12sp</item>
+        <item name="lineSpacing">@dimen/lineSpacing15dp</item>
+        <item name="android:spacing">@dimen/fontSpacingMinus0.25dp</item>
+    </style>
+
+    <style name="Body2" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/spartan_medium</item>
+        <item name="android:textSize">@dimen/fontSize11sp</item>
+        <item name="lineSpacing">@dimen/lineSpacing18dp</item>
+        <item name="android:spacing">@dimen/fontSpacingMinus0.23dp</item>
+    </style>
+</resources>

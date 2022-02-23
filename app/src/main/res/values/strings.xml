@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Atlys</string>
+    <string name="app_name">Atlys_Assesment</string>
+    <string name="invoices">Invoices</string>
+    <string name="no_invoices">No Invoices</string>
+    <string name="invoices_smallCase">invoices</string>
+    <string name="_new">New</string>
+    <string name="filter">Filter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

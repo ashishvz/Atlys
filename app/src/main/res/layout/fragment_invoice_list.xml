@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondary"
+        android:orientation="vertical"
+        tools:context=".activity.MainActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height60dp"
+            app:cardBackgroundColor="@color/secondary_light"
+            app:cardCornerRadius="@dimen/cornerRadius0dp"
+            app:cardElevation="@dimen/elevation0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/width80dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/logo_layer_1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/iconSize30dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/logo_layer_2" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_logo" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/profileIcon"
+                    android:layout_width="@dimen/height40dp"
+                    android:layout_height="@dimen/height40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin15p"
+                    app:cardCornerRadius="@dimen/cornerRadius45dp"
+                    app:cardElevation="@dimen/elevation0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/image_avatar" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/profileIconDivider"
+                    android:layout_width="@dimen/width1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/margin15p"
+                    android:layout_toStartOf="@id/profileIcon"
+                    android:background="@color/dark_grey" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin25p"
+                    android:layout_toStartOf="@id/profileIconDivider"
+                    android:src="@drawable/ic_icon_sun" />
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:id="@+id/invoicesDetailHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin15p"
+            android:layout_marginTop="@dimen/margin25p"
+            android:layout_marginEnd="@dimen/margin15p">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/invoiceHeading"
+                style="@style/H2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/invoices" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/H3_Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/invoiceHeading"
+                android:text="@string/no_invoices" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/newButton"
+                style="@style/Button_Type_2_with_plus_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height60dp"
+                android:layout_alignParentEnd="true"
+                android:text="@string/_new" />
+
+            <LinearLayout
+                android:id="@+id/filterLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin20p"
+                android:layout_toStartOf="@id/newButton"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/H3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin5dp"
+                    android:gravity="center"
+                    android:text="@string/filter" />
+
+                <ImageView
+                    android:id="@+id/filterIcon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_icon_arrow_down" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/invoicesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin15p"
+            android:layout_marginTop="@dimen/margin25p"
+            android:layout_marginEnd="@dimen/margin15p" />
+    </LinearLayout>
+</layout>
