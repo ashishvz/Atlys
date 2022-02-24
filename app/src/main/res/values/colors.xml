@@ -25,4 +25,5 @@
     <color name="green_trans">#30357C3C</color>
     <color name="orange">#FFB72B</color>
     <color name="orange_tran">#10FFB72B</color>
+    <color name="edit_trans">#201E2139</color>
 </resources>

@@ -11,4 +11,12 @@ data class Item(
     var quantity: Int?,
     var price: Double?,
     var total: Double?
-)
+) {
+    fun getItemQtyAndPrice(): String {
+        return quantity.toString() + " x £" + price
+    }
+
+    fun getItemTotal(): String {
+        return "£$total"
+    }
+}

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="card_invoice"
+            type="com.ashishvz.atlys.database.entities.Invoice" />
+
+        <import type="androidx.core.content.ContextCompat" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondary">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/transactionCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:cardBackgroundColor="@color/secondary_light"
+            app:cardCornerRadius="@dimen/cornerRadius0dp"
+            app:cardElevation="@dimen/elevation0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/padding20p"
+                android:paddingBottom="@dimen/padding20p">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Button_Type_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/light_blue_trans"
+                    android:text="@string/edit" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Button_Delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/margin10dp"
+                    android:layout_marginEnd="@dimen/margin10dp"
+                    android:text="@string/delete" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Button_Type_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin10dp"
+                    android:text="@string/mark_as_paid" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/transactionCard"
+            android:padding="@dimen/padding20p">
+
+            <ImageView
+                android:id="@+id/buttonBackInvoiceDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height40dp"
+                android:src="@drawable/ic_icon_arrow_left" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/goBackText"
+                style="@style/H3_Small"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height40dp"
+                android:layout_marginStart="@dimen/margin15p"
+                android:layout_toEndOf="@id/buttonBackInvoiceDetail"
+                android:gravity="center"
+                android:text="@string/go_back" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/goBackText"
+                android:layout_marginTop="@dimen/margin15p"
+                android:scrollbars="none">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/statusCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/secondary_light"
+                        app:cardCornerRadius="@dimen/cornerRadius10dp"
+                        app:cardElevation="@dimen/elevation0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/padding20p">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/_textStatus"
+                                style="@style/Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="@string/status" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="@dimen/width100dp"
+                                android:layout_height="@dimen/height40dp"
+                                android:layout_alignParentEnd="true"
+                                app:cardBackgroundColor="@{ContextCompat.getColor(context, card_invoice.setStatusBackgroundColor())}"
+                                app:cardCornerRadius="@dimen/cornerRadius8dp"
+                                app:cardElevation="@dimen/elevation0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:padding="@dimen/padding10dp">
+
+                                    <ImageView
+                                        android:id="@+id/dotImage"
+                                        android:layout_width="10dp"
+                                        android:layout_height="10dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginEnd="@dimen/margin5dp"
+                                        android:layout_toStartOf="@id/textStatus"
+                                        android:src="@{ContextCompat.getDrawable(context, card_invoice.setDotDrawable())}" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/textStatus"
+                                        style="@style/H3_Small"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="@{card_invoice.formattedStatus}"
+                                        android:textColor="@{ContextCompat.getColor(context, card_invoice.setStatusTextColor())}" />
+
+                                </RelativeLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/statusCard"
+                        android:layout_marginTop="@dimen/margin20p"
+                        app:cardBackgroundColor="@color/secondary_light"
+                        app:cardCornerRadius="@dimen/cornerRadius10dp"
+                        app:cardElevation="@dimen/elevation0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/padding20p">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/textHash"
+                                style="@style/H3_Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hash"
+                                android:textColor="@color/light_blue" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/textInvoiceId"
+                                style="@style/H3_Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/textHash"
+                                android:text="@{card_invoice.invoiceId}" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceDescription"
+                                style="@style/Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/textInvoiceId"
+                                android:text="@{card_invoice.description}" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceSenderStreet"
+                                style="@style/Body1"
+                                android:layout_width="@dimen/width140dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceDescription"
+                                android:layout_marginTop="@dimen/margin25p"
+                                android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                android:text="@{card_invoice.sa_street}" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceSenderCity"
+                                style="@style/Body1"
+                                android:layout_width="@dimen/width140dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceSenderStreet"
+                                android:layout_marginTop="@dimen/margin5dp"
+                                android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                android:text="@{card_invoice.sa_city}" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceSenderPostCode"
+                                style="@style/Body1"
+                                android:layout_width="@dimen/width140dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceSenderCity"
+                                android:layout_marginTop="@dimen/margin5dp"
+                                android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                android:text="@{card_invoice.sa_postCode}" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceSenderCountry"
+                                style="@style/Body1"
+                                android:layout_width="@dimen/width140dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceSenderPostCode"
+                                android:layout_marginTop="@dimen/margin5dp"
+                                android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                android:text="@{card_invoice.sa_country}" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceDateText"
+                                style="@style/Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceSenderCountry"
+                                android:layout_marginTop="@dimen/margin25p"
+                                android:text="@string/invoice_date" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceDate"
+                                style="@style/H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceDateText"
+                                android:layout_marginTop="@dimen/margin10dp"
+                                android:text="@{card_invoice.invoiceDate}" />
+
+                            <LinearLayout
+                                android:id="@+id/billToLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceSenderCountry"
+                                android:layout_marginStart="@dimen/height80dp"
+                                android:layout_toEndOf="@id/invoiceDateText"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/invoiceBillToText"
+                                    style="@style/Body1"
+                                    android:layout_width="@dimen/width100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin25p"
+                                    android:text="@string/bill_to" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/clientName"
+                                    style="@style/H3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin10dp"
+                                    android:text="@{card_invoice.clientName}" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/invoiceClientStreet"
+                                    style="@style/Body1"
+                                    android:layout_width="@dimen/width140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin5dp"
+                                    android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                    android:text="@{card_invoice.ca_street}" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/invoiceClientCity"
+                                    style="@style/Body1"
+                                    android:layout_width="@dimen/width140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin5dp"
+                                    android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                    android:text="@{card_invoice.ca_city}" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/invoiceClientPostCode"
+                                    style="@style/Body1"
+                                    android:layout_width="@dimen/width140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin5dp"
+                                    android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                    android:text="@{card_invoice.ca_postCode}" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/invoiceClientCountry"
+                                    style="@style/Body1"
+                                    android:layout_width="@dimen/width140dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin5dp"
+                                    android:lineSpacingExtra="@dimen/lineSpacing6dp"
+                                    android:text="@{card_invoice.ca_country}" />
+
+                            </LinearLayout>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoicePaymentDueDateText"
+                                style="@style/Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceDate"
+                                android:layout_marginTop="@dimen/margin25p"
+                                android:text="@string/payment_due" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoicePaymentDate"
+                                style="@style/H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoicePaymentDueDateText"
+                                android:layout_marginTop="@dimen/margin10dp"
+                                android:text="@{card_invoice.paymentDueDateWithoutDue}" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceEmailText"
+                                style="@style/Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/billToLayout"
+                                android:layout_marginTop="@dimen/margin25p"
+                                android:text="@string/sent_to" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/invoiceClientEmail"
+                                style="@style/H3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceEmailText"
+                                android:layout_marginTop="@dimen/margin10dp"
+                                android:text="@{card_invoice.clientEmail}" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/invoiceClientEmail"
+                                android:layout_marginTop="@dimen/margin25p"
+                                app:cardBackgroundColor="@color/light_blue_trans"
+                                app:cardCornerRadius="@dimen/cornerRadius10dp"
+                                app:cardElevation="@dimen/elevation0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <RelativeLayout
+                                        android:id="@+id/amountTotalLayout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/height80dp"
+                                        android:layout_below="@id/itemsRecyclerView"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="@color/dark_one"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            style="@style/Body1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="@dimen/margin25p"
+                                            android:text="@string/amount_due" />
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            style="@style/H2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="@dimen/margin25p"
+                                            android:text="@{card_invoice.formattedInvoiceTotal}" />
+
+                                    </RelativeLayout>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/itemsRecyclerView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                        tools:listitem="@layout/item_details"
+                                        android:elevation="@dimen/elevation0dp"/>
+
+                                </RelativeLayout>
+                            </com.google.android.material.card.MaterialCardView>
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

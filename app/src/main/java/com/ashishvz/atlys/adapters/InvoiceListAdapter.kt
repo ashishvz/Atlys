@@ -3,12 +3,15 @@ package com.ashishvz.atlys.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ashishvz.atlys.R
 import com.ashishvz.atlys.database.entities.Invoice
 import com.ashishvz.atlys.databinding.CardInvoiceDetailBinding
+import com.ashishvz.atlys.databinding.FragmentInvoiceListBinding
+import com.ashishvz.atlys.fragments.InvoiceListFragmentDirections
 
 class InvoiceListAdapter :
     ListAdapter<Invoice, InvoiceListAdapter.InvoiceViewHolder>(InvoiceDiffCallBack()) {
@@ -33,7 +36,8 @@ class InvoiceListAdapter :
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.setClickListener {
-
+                val direction = InvoiceListFragmentDirections.actionInvoiceListFragmentToInvoiceDetailsFragment(binding.cardInvoice?.invoiceId)
+                it.findNavController().navigate(direction)
             }
         }
 

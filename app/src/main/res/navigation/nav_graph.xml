@@ -9,5 +9,23 @@
         android:id="@+id/invoiceListFragment"
         android:name="com.ashishvz.atlys.fragments.InvoiceListFragment"
         android:label="InvoiceListFragment"
-        tools:layout="@layout/fragment_invoice_list"/>
+        tools:layout="@layout/fragment_invoice_list">
+        <action
+            android:id="@+id/action_invoiceListFragment_to_invoiceDetailsFragment"
+            app:destination="@id/invoiceDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/invoiceDetailsFragment"
+        android:name="com.ashishvz.atlys.fragments.InvoiceDetailsFragment"
+        android:label="InvoiceDetailsFragment"
+        tools:layout="@layout/fragment_invoice_detail" >
+        <argument
+            android:name="invoiceId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true"/>
+        <action
+            android:id="@+id/action_invoiceDetailsFragment_to_invoiceListFragment"
+            app:destination="@id/invoiceListFragment" />
+    </fragment>
 </navigation>

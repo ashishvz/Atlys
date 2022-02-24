@@ -9,4 +9,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hash">#</string>
     <string name="pounds_symbol">£</string>
+    <string name="description">Create an invoice by clicking the <b>New</b> button and get started</string>
+    <string name="heading">There is nothing here</string>
+    <string name="go_back">Go back</string>
+    <string name="status">Status</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="mark_as_paid">Mark as Paid</string>
+    <string name="invoice_date">Invoice Date</string>
+    <string name="bill_to">Bill To</string>
+    <string name="payment_due">Payment Due</string>
+    <string name="sent_to">Sent to</string>
+    <string name="amount_due">Amount Due</string>
 </resources>

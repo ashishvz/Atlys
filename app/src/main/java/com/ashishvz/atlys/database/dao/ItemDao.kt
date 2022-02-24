@@ -1,5 +1,6 @@
 package com.ashishvz.atlys.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -16,5 +17,5 @@ interface ItemDao {
     fun insertAll(items: List<Item>)
 
     @Query("Select * from Items where invoiceId = :id")
-    fun getItemForInvoice(id: String): List<Item>
+    fun getItemForInvoice(id: String): LiveData<List<Item>>
 }

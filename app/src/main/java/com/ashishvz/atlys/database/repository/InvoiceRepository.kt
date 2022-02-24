@@ -8,6 +8,6 @@ class InvoiceRepository  @Inject constructor(
 ){
     fun getAllInvoices() =  invoiceDao.getAllInvoices()
 
-    suspend fun getInvoice(id: String) = invoiceDao.getInvoiceById(id)
+    fun getInvoice(id: String) = invoiceDao.getInvoiceById(id)
 
 }

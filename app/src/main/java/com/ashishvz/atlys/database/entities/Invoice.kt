@@ -37,7 +37,27 @@ data class Invoice(
         } else {
             val parser = SimpleDateFormat(DB_DATE_FORMAT, Locale.US)
             val formatter = SimpleDateFormat(UI_DATE_FORMAT, Locale.US)
-            "Due" + formatter.format(parser.parse(paymentDue))
+            "Due " + formatter.format(parser.parse(paymentDue))
+        }
+    }
+
+    fun getPaymentDueDateWithoutDue(): String {
+        return if (paymentDue == null) {
+            "N/A"
+        } else {
+            val parser = SimpleDateFormat(DB_DATE_FORMAT, Locale.US)
+            val formatter = SimpleDateFormat(UI_DATE_FORMAT, Locale.US)
+            formatter.format(parser.parse(paymentDue))
+        }
+    }
+
+    fun getInvoiceDate(): String {
+        return if (createdAt == null) {
+            "N/A"
+        } else {
+            val parser = SimpleDateFormat(DB_DATE_FORMAT, Locale.US)
+            val formatter = SimpleDateFormat(UI_DATE_FORMAT, Locale.US)
+            formatter.format(parser.parse(createdAt))
         }
     }
 

@@ -10,72 +10,7 @@
         android:orientation="vertical"
         tools:context=".activity.MainActivity">
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height60dp"
-            app:cardBackgroundColor="@color/secondary_light"
-            app:cardCornerRadius="@dimen/cornerRadius0dp"
-            app:cardElevation="@dimen/elevation0dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <RelativeLayout
-                    android:layout_width="@dimen/width80dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:background="@drawable/logo_layer_1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/iconSize30dp"
-                        android:layout_alignParentBottom="true"
-                        android:background="@drawable/logo_layer_2" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/ic_logo" />
-
-                </RelativeLayout>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/profileIcon"
-                    android:layout_width="@dimen/height40dp"
-                    android:layout_height="@dimen/height40dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/margin15p"
-                    app:cardCornerRadius="@dimen/cornerRadius45dp"
-                    app:cardElevation="@dimen/elevation0dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/image_avatar" />
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <View
-                    android:id="@+id/profileIconDivider"
-                    android:layout_width="@dimen/width1dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin15p"
-                    android:layout_toStartOf="@id/profileIcon"
-                    android:background="@color/dark_grey" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/margin25p"
-                    android:layout_toStartOf="@id/profileIconDivider"
-                    android:src="@drawable/ic_icon_sun" />
-
-            </RelativeLayout>
-        </com.google.android.material.card.MaterialCardView>
+        <include layout="@layout/toolbar" />
 
         <RelativeLayout
             android:id="@+id/invoicesDetailHeader"
@@ -93,6 +28,7 @@
                 android:text="@string/invoices" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/invoiceCount"
                 style="@style/H3_Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -133,6 +69,45 @@
             </LinearLayout>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/noDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin15p"
+            android:layout_marginTop="@dimen/margin25p"
+            android:layout_marginEnd="@dimen/margin15p"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/illustration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_illustration_empty" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/thereIsNothingText"
+                style="@style/H2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/illustration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin25p"
+                android:text="@string/heading" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Body1"
+                android:layout_width="@dimen/width210dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thereIsNothingText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin25p"
+                android:gravity="center"
+                android:text="@string/description" />
+
+        </RelativeLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/invoicesRecyclerView"
             android:layout_width="match_parent"
@@ -140,7 +115,8 @@
             android:layout_marginStart="@dimen/margin15p"
             android:layout_marginTop="@dimen/margin25p"
             android:layout_marginEnd="@dimen/margin15p"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/card_invoice_detail"/>
+            tools:listitem="@layout/card_invoice_detail" />
     </LinearLayout>
 </layout>

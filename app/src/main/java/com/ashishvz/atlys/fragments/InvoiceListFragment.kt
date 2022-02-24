@@ -1,11 +1,13 @@
 package com.ashishvz.atlys.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.ashishvz.atlys.R
 import com.ashishvz.atlys.adapters.InvoiceListAdapter
 import com.ashishvz.atlys.database.AppDatabase
 import com.ashishvz.atlys.databinding.FragmentInvoiceListBinding
@@ -29,9 +31,20 @@ class InvoiceListFragment: Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     private fun subscribeUI(adapter: InvoiceListAdapter) {
         viewModel.invoiceData.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+            if (it.isNotEmpty()) {
+                binding.noDataLayout.visibility = View.GONE
+                binding.invoicesRecyclerView.visibility = View.VISIBLE
+                binding.invoiceCount.text = it.size.toString() + " " + getString(R.string.invoices)
+                adapter.submitList(it)
+            } else {
+                binding.noDataLayout.visibility = View.VISIBLE
+                binding.invoicesRecyclerView.visibility = View.GONE
+                binding.invoiceCount.text = getString(R.string.no_invoices)
+            }
+
         }
     }
 }

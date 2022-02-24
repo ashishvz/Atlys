@@ -7,6 +7,7 @@
     <dimen name="fontSize12sp">12sp</dimen>
     <dimen name="fontSize11sp">11sp</dimen>
 
+    <dimen name="lineSpacing6dp">6dp</dimen>
     <dimen name="lineSpacing36dp">36dp</dimen>
     <dimen name="lineSpacing22dp">22dp</dimen>
     <dimen name="lineSpacing24dp">24dp</dimen>
@@ -22,7 +23,7 @@
     <dimen name="padding1dp">1dp</dimen>
     <dimen name="padding2dp">2dp</dimen>
     <dimen name="padding5dp">5dp</dimen>
-    <dimen name="padding10dp">01dp</dimen>
+    <dimen name="padding10dp">10dp</dimen>
     <dimen name="padding15p">15dp</dimen>
     <dimen name="padding20p">20dp</dimen>
     <dimen name="padding25p">25dp</dimen>
@@ -50,6 +51,7 @@
     <dimen name="width100dp">100dp</dimen>
     <dimen name="width120dp">120dp</dimen>
     <dimen name="width140dp">140dp</dimen>
+    <dimen name="width210dp">210dp</dimen>
     <dimen name="width400dp">400dp</dimen>
 
     <dimen name="cornerRadius0dp">0dp</dimen>

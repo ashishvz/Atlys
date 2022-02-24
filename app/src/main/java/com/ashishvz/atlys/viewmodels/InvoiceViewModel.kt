@@ -8,8 +8,12 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 @HiltViewModel
 class InvoiceViewModel @Inject constructor(
-    repository: InvoiceRepository
+    private val repository: InvoiceRepository
 ): ViewModel() {
     val invoiceData: LiveData<List<Invoice>> = repository.getAllInvoices()
+
+    fun getInvoice(invoiceId: String): Invoice {
+        return repository.getInvoice(invoiceId)
+    }
 
 }
