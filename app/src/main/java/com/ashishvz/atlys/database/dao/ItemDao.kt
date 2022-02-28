@@ -18,4 +18,7 @@ interface ItemDao {
 
     @Query("Select * from Items where invoiceId = :id")
     fun getItemForInvoice(id: String): LiveData<List<Item>>
+
+    @Query("delete from Items where invoiceId = :id")
+    fun deleteItemsForInvoice(id: String)
 }

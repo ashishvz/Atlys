@@ -49,4 +49,16 @@
         <item name="android:paddingBottom">@dimen/padding15p</item>
         <item name="textAllCaps">false</item>
     </style>
+
+    <style name="Button_Add_new">
+        <item name="cornerRadius">@dimen/cornerRadius45dp</item>
+        <item name="android:backgroundTint">@color/secondary_light</item>
+        <item name="rippleColor">@color/light_blue</item>
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:paddingStart">@dimen/padding25p</item>
+        <item name="android:paddingEnd">@dimen/padding25p</item>
+        <item name="android:paddingTop">@dimen/padding15p</item>
+        <item name="android:paddingBottom">@dimen/padding15p</item>
+        <item name="textAllCaps">false</item>
+    </style>
 </resources>

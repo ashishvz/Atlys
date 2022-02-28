@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Items")
 data class Item(
     @PrimaryKey(autoGenerate = true) val itemId : Int,
-    val invoiceId: String,
+    var invoiceId: String?,
     var name: String?,
     var quantity: Int?,
     var price: Double?,

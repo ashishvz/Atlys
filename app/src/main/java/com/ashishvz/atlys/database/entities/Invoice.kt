@@ -13,7 +13,7 @@ import java.util.logging.SimpleFormatter
 
 @Entity(tableName = "Invoices")
 data class Invoice(
-    @PrimaryKey val invoiceId: String,
+    @PrimaryKey var invoiceId: String,
     var createdAt: String?,
     var paymentDue: String?,
     var description: String?,

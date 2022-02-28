@@ -39,6 +39,7 @@
                 android:paddingBottom="@dimen/padding20p">
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editButton"
                     style="@style/Button_Type_2"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/height60dp"
@@ -48,6 +49,7 @@
 
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/deleteButton"
                     style="@style/Button_Delete"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/height60dp"
@@ -57,6 +59,7 @@
                     android:text="@string/delete" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/markAsPaidButton"
                     style="@style/Button_Type_2"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/height60dp"
@@ -398,9 +401,9 @@
                                         android:id="@+id/itemsRecyclerView"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:elevation="@dimen/elevation0dp"
                                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                                        tools:listitem="@layout/item_details"
-                                        android:elevation="@dimen/elevation0dp"/>
+                                        tools:listitem="@layout/item_details" />
 
                                 </RelativeLayout>
                             </com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/secondary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20p"
+            android:text="@string/item_name"
+            android:textColor="@color/light_blue" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputItemName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height60dp"
+            android:layout_marginTop="@dimen/margin5dp"
+            android:elevation="@dimen/elevation8dp"
+            app:boxBackgroundColor="@color/secondary_light"
+            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius10dp"
+            app:boxCornerRadiusBottomStart="@dimen/cornerRadius10dp"
+            app:boxCornerRadiusTopEnd="@dimen/cornerRadius10dp"
+            app:boxCornerRadiusTopStart="@dimen/cornerRadius10dp"
+            app:boxStrokeColor="@color/secondary_light">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputItemNameEditText"
+                style="@style/H3_Small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20p"
+                android:text="@string/item_qty"
+                android:textColor="@color/light_blue" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputProjectDescription"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height60dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:elevation="@dimen/elevation8dp"
+                app:boxBackgroundColor="@color/secondary_light"
+                app:boxCornerRadiusBottomEnd="@dimen/cornerRadius10dp"
+                app:boxCornerRadiusBottomStart="@dimen/cornerRadius10dp"
+                app:boxCornerRadiusTopEnd="@dimen/cornerRadius10dp"
+                app:boxCornerRadiusTopStart="@dimen/cornerRadius10dp"
+                app:boxStrokeColor="@color/secondary_light">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputProjectDescriptionEditText"
+                    style="@style/H3_Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin20p"
+                    android:text="@string/item_qty"
+                    android:textColor="@color/light_blue" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputQty"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_marginTop="@dimen/margin5dp"
+                    android:elevation="@dimen/elevation8dp"
+                    app:boxBackgroundColor="@color/secondary_light"
+                    app:boxCornerRadiusBottomEnd="@dimen/cornerRadius10dp"
+                    app:boxCornerRadiusBottomStart="@dimen/cornerRadius10dp"
+                    app:boxCornerRadiusTopEnd="@dimen/cornerRadius10dp"
+                    app:boxCornerRadiusTopStart="@dimen/cornerRadius10dp"
+                    app:boxStrokeColor="@color/secondary_light">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputQtyEditText"
+                        style="@style/H3_Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="number"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin10dp"
+                android:layout_marginEnd="@dimen/margin10dp"
+                android:layout_weight="1.5"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin20p"
+                    android:text="@string/price"
+                    android:textColor="@color/light_blue" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputPrice"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_marginTop="@dimen/margin5dp"
+                    android:elevation="@dimen/elevation8dp"
+                    app:boxBackgroundColor="@color/secondary_light"
+                    app:boxCornerRadiusBottomEnd="@dimen/cornerRadius10dp"
+                    app:boxCornerRadiusBottomStart="@dimen/cornerRadius10dp"
+                    app:boxCornerRadiusTopEnd="@dimen/cornerRadius10dp"
+                    app:boxCornerRadiusTopStart="@dimen/cornerRadius10dp"
+                    app:boxStrokeColor="@color/secondary_light">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputPriceEditText"
+                        style="@style/H3_Small"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="numberDecimal"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/totalText"
+                    style="@style/Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin20p"
+                    android:text="@string/total"
+                    android:textColor="@color/light_blue" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/totalTextView"
+                    style="@style/Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/totalText"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin25p"
+                    android:gravity="center"
+                    android:textColor="@color/light_blue" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/deleteInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_icon_delete"
+                android:padding="@dimen/padding10dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/margin20p" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_invoiceListFragment_to_invoiceDetailsFragment"
             app:destination="@id/invoiceDetailsFragment" />
+        <action
+            android:id="@+id/action_invoiceListFragment_to_newInvoiceFragment"
+            app:destination="@id/newInvoiceFragment" />
     </fragment>
     <fragment
         android:id="@+id/invoiceDetailsFragment"
@@ -26,6 +29,15 @@
             app:nullable="true"/>
         <action
             android:id="@+id/action_invoiceDetailsFragment_to_invoiceListFragment"
+            app:destination="@id/invoiceListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newInvoiceFragment"
+        android:name="com.ashishvz.atlys.fragments.NewInvoiceFragment"
+        android:label="NewInvoiceFragment"
+        tools:layout="@layout/fragment_new_invoice">
+        <action
+            android:id="@+id/action_newInvoiceFragment_to_invoiceListFragment"
             app:destination="@id/invoiceListFragment" />
     </fragment>
 </navigation>

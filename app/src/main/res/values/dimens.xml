@@ -46,6 +46,7 @@
 
     <dimen name="width1dp">1dp</dimen>
     <dimen name="width2dp">2dp</dimen>
+    <dimen name="width4dp">4dp</dimen>
     <dimen name="width60dp">60dp</dimen>
     <dimen name="width80dp">80dp</dimen>
     <dimen name="width100dp">100dp</dimen>

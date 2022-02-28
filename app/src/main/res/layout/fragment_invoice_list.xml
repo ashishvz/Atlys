@@ -3,120 +3,146 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/secondary"
-        android:orientation="vertical"
-        tools:context=".activity.MainActivity">
-
-        <include layout="@layout/toolbar" />
-
-        <RelativeLayout
-            android:id="@+id/invoicesDetailHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin15p"
-            android:layout_marginTop="@dimen/margin25p"
-            android:layout_marginEnd="@dimen/margin15p">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/invoiceHeading"
-                style="@style/H2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/invoices" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/invoiceCount"
-                style="@style/H3_Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/invoiceHeading"
-                android:text="@string/no_invoices" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/newButton"
-                style="@style/Button_Type_2_with_plus_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/height60dp"
-                android:layout_alignParentEnd="true"
-                android:text="@string/_new" />
-
-            <LinearLayout
-                android:id="@+id/filterLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/margin20p"
-                android:layout_toStartOf="@id/newButton"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textview.MaterialTextView
-                    style="@style/H3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/margin5dp"
-                    android:gravity="center"
-                    android:text="@string/filter" />
-
-                <ImageView
-                    android:id="@+id/filterIcon"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_icon_arrow_down" />
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/noDataLayout"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/margin15p"
-            android:layout_marginTop="@dimen/margin25p"
-            android:layout_marginEnd="@dimen/margin15p"
-            android:gravity="center">
+            android:background="@color/secondary"
+            android:orientation="vertical"
+            tools:context=".activity.MainActivity">
 
-            <ImageView
-                android:id="@+id/illustration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/ic_illustration_empty" />
+            <include layout="@layout/toolbar" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/thereIsNothingText"
-                style="@style/H2"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/invoicesDetailHeader"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/illustration"
-                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin15p"
                 android:layout_marginTop="@dimen/margin25p"
-                android:text="@string/heading" />
+                android:layout_marginEnd="@dimen/margin15p">
 
-            <com.google.android.material.textview.MaterialTextView
-                style="@style/Body1"
-                android:layout_width="@dimen/width210dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/thereIsNothingText"
-                android:layout_centerHorizontal="true"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/invoiceHeading"
+                    style="@style/H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invoices" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/invoiceCount"
+                    style="@style/H3_Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/invoiceHeading"
+                    android:text="@string/no_invoices" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/newButton"
+                    style="@style/Button_Type_2_with_plus_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height60dp"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/_new" />
+
+                <LinearLayout
+                    android:id="@+id/filterLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin20p"
+                    android:layout_toStartOf="@id/newButton"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/H3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin5dp"
+                        android:gravity="center"
+                        android:text="@string/filter" />
+
+                    <ImageView
+                        android:id="@+id/filterIcon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_icon_arrow_down" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/noDataLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin15p"
                 android:layout_marginTop="@dimen/margin25p"
+                android:layout_marginEnd="@dimen/margin15p"
                 android:gravity="center"
-                android:text="@string/description" />
+                android:visibility="gone">
 
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/illustration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_illustration_empty" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/invoicesRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin15p"
-            android:layout_marginTop="@dimen/margin25p"
-            android:layout_marginEnd="@dimen/margin15p"
-            android:visibility="gone"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/card_invoice_detail" />
-    </LinearLayout>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/thereIsNothingText"
+                    style="@style/H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/illustration"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin25p"
+                    android:text="@string/heading" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Body1"
+                    android:layout_width="@dimen/width210dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/thereIsNothingText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin25p"
+                    android:gravity="center"
+                    android:text="@string/description" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/progressLoadingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/secondary"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:layout_width="@dimen/width60dp"
+                    android:layout_height="@dimen/height60dp"
+                    android:progressTint="@color/secondary_light"
+                    android:indeterminate="true"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:progressBackgroundTint="@color/secondary_light"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading_the_invoices"
+                    style="@style/H3"
+                    android:padding="@dimen/padding10dp"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/invoicesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin15p"
+                android:layout_marginTop="@dimen/margin25p"
+                android:layout_marginEnd="@dimen/margin15p"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/card_invoice_detail" />
+        </LinearLayout>
 </layout>
