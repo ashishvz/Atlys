@@ -12,6 +12,8 @@ class InvoiceRepository  @Inject constructor(
 
     fun getInvoice(id: String) = invoiceDao.getInvoiceById(id)
 
+    fun getInvoicesByStatus(status: Status) = invoiceDao.getInvoicesByStatus(status)
+
     fun insert(invoice: Invoice) = invoiceDao.insert(invoice)
 
     fun updateInvoiceStatus(invoiceId: String, status: Status) = invoiceDao.updateInvoiceStatus(invoiceId, status)

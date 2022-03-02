@@ -37,10 +37,14 @@
     <string name="item_qty">Qty.</string>
     <string name="price">Price</string>
     <string name="total">Total</string>
-    <string name="add_new_invoice">+Add New Invoice</string>
+    <string name="add_new_invoice">+Add New Item</string>
     <string name="save_as_send">Save</string>
     <string name="save_as_draft">Save as Draft</string>
     <string name="discard">Discard</string>
     <string name="cancel">Cancel</string>
     <string name="confirm_deletion">Confirm Deletion</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="filter_by_status">Filter by Status</string>
+    <string name="select_invoice_status_from_below">Select invoice status from below.</string>
+    <string name="clear_filter">Clear Filter</string>
 </resources>

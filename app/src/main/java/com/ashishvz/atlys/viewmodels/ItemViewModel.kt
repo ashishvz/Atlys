@@ -15,6 +15,9 @@ class ItemViewModel @Inject constructor(
     fun getItemForInvoice(invoiceId: String): LiveData<List<Item>> =
         itemRepository.getAllItemsForInvoice(invoiceId)
 
+    fun getItemListForInvoice(invoiceId: String): MutableList<Item> =
+        itemRepository.getAllItemListForInvoice(invoiceId)
+
     fun insertAllItems(items: List<Item>) = itemRepository.insertAllItems(items)
 
     fun deleteItemsForInvoice(invoiceId: String) = itemRepository.deleteItemsForInvoice(invoiceId)

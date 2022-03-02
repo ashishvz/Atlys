@@ -9,6 +9,8 @@ class ItemRepository @Inject constructor(
 ) {
     fun getAllItemsForInvoice(id: String) = itemDao.getItemForInvoice(id)
 
+    fun getAllItemListForInvoice(id: String) = itemDao.getItemListForInvoice(id)
+
     fun insertAllItems(items: List<Item>) = itemDao.insertAll(items)
 
     fun deleteItemsForInvoice(invoiceId: String) = itemDao.deleteItemsForInvoice(invoiceId)

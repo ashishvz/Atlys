@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/width400dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/secondary_light"
+    app:cardCornerRadius="@dimen/cornerRadius10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin10dp"
+        android:orientation="vertical"
+        android:padding="@dimen/padding20p">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/H2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_by_status" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_invoice_status_from_below" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/width1dp"
+            android:layout_marginTop="@dimen/margin5dp"
+            android:background="@color/light_blue" />
+
+        <ListView
+            android:id="@+id/filterList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearFilter"
+            style="@style/Button_Save_Draft"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height60dp"
+            android:layout_marginEnd="@dimen/margin10dp"
+            android:text="@string/clear_filter"
+            android:layout_marginTop="@dimen/margin5dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelButton"
+                style="@style/Button_Save_Draft"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height60dp"
+                android:layout_marginEnd="@dimen/margin10dp"
+                android:text="@string/cancel"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -79,6 +79,9 @@ class InvoiceDetailsFragment : Fragment() {
             }
             dialog.show()
         }
+        binding.editButton.setOnClickListener {
+            findNavController().navigate(InvoiceDetailsFragmentDirections.actionInvoiceDetailsFragmentToEditInvoiceFragment(args.invoiceId!!))
+        }
         subscribeUI(adapter)
         return binding.root
     }

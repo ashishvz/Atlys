@@ -22,6 +22,7 @@ buildscript {
         testExtJunit = '1.1.0'
         uiAutomatorVersion = '2.2.0'
         workVersion = '2.7.1'
+        smartSpinnerVersion = '1.5.0'
 
         repositories {
             maven {

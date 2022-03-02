@@ -13,9 +13,19 @@ class InvoiceViewModel @Inject constructor(
 ): ViewModel() {
     val invoiceData: LiveData<List<Invoice>> = repository.getAllInvoices()
 
+    fun invoices(isStatus: Boolean, status: Status?): LiveData<List<Invoice>> {
+        return if (isStatus && status != null) {
+            repository.getInvoicesByStatus(status)
+        } else {
+            repository.getAllInvoices()
+        }
+    }
+
     fun getInvoice(invoiceId: String): Invoice {
         return repository.getInvoice(invoiceId)
     }
+
+    fun getInvoiceByStatus(status: Status) = repository.getInvoicesByStatus(status)
 
     fun insertInvoice(invoice: Invoice) = repository.insert(invoice)
 

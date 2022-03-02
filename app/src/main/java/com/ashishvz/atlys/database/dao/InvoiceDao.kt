@@ -23,6 +23,9 @@ interface InvoiceDao {
     @Query("Select * from invoices where invoiceId = :id")
     fun getInvoiceById(id: String): Invoice
 
+    @Query("Select * from invoices where status = :status")
+    fun getInvoicesByStatus(status: Status): LiveData<List<Invoice>>
+
     @Query("delete from invoices where invoiceId = :id")
     fun deleteInvoice(id: String)
 
